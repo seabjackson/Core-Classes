@@ -13,7 +13,6 @@ protocol NetworkControllerProtocol: class {
     func get<T>(type: T.Type, from url: URL) -> AnyPublisher<T, Error> where T: Codable
 }
 
-
 final class NetworkController: NetworkControllerProtocol {
     func get<T: Codable>(type: T.Type, from url: URL) -> AnyPublisher<T, Error> {
         let urlRequest = URLRequest(url: url)
