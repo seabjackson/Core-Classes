@@ -14,7 +14,7 @@ protocol CoreClassesControllerProtocol: class {
     var networkController: NetworkControllerProtocol { get }
     
     /// queries the classes available
-    func getClasses() -> AnyPublisher<CoreClasses, Error>
+    func getClasses() -> AnyPublisher<Root, Error>
 }
 
 
@@ -25,10 +25,12 @@ final class CoreClassesController: CoreClassesControllerProtocol {
         self.networkController  = networkController
     }
     
-    func getClasses() -> AnyPublisher<CoreClasses, Error> {
+    func getClasses() -> AnyPublisher<Root, Error> {
         let apiEndPoint  = APIEndPoint.coreClasses
-        return networkController.get(type: CoreClasses.self, from: apiEndPoint.url)
+        return networkController.get(type: Root.self, from: apiEndPoint.url)
     }
+    
+    
     
     
 }
