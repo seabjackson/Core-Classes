@@ -15,6 +15,7 @@
 		B584B8A9251B1E69005F2275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B584B8A7251B1E69005F2275 /* LaunchScreen.storyboard */; };
 		B584B8B2251B1ED9005F2275 /* CoreClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584B8B1251B1ED9005F2275 /* CoreClasses.swift */; };
 		B584B8B5251B2079005F2275 /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584B8B4251B2079005F2275 /* APIEndPoint.swift */; };
+		B584B8B7251B243B005F2275 /* NetworkController in Sources */ = {isa = PBXBuildFile; fileRef = B584B8B6251B243B005F2275 /* NetworkController */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B584B8AA251B1E69005F2275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B584B8B1251B1ED9005F2275 /* CoreClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClasses.swift; sourceTree = "<group>"; };
 		B584B8B4251B2079005F2275 /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		B584B8B6251B243B005F2275 /* NetworkController */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkController; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				B584B8B4251B2079005F2275 /* APIEndPoint.swift */,
+				B584B8B6251B243B005F2275 /* NetworkController */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				B584B8A1251B1E68005F2275 /* ViewController.swift in Sources */,
 				B584B8B5251B2079005F2275 /* APIEndPoint.swift in Sources */,
+				B584B8B7251B243B005F2275 /* NetworkController in Sources */,
 				B584B89D251B1E68005F2275 /* AppDelegate.swift in Sources */,
 				B584B89F251B1E68005F2275 /* SceneDelegate.swift in Sources */,
 				B584B8B2251B1ED9005F2275 /* CoreClasses.swift in Sources */,
