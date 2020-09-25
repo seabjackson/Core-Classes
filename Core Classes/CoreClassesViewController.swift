@@ -12,24 +12,39 @@ import Combine
 class CoreClassesViewController: UIViewController {
     
     @Published var filter =  ""
-    let cellIdentifier = "CellIdentifier"
+    
     var filteredClasses = [CoreClasses]()
     var coreClasses = [CoreClasses]()
     
     @IBOutlet weak var displayTableView: UITableView!
     
-   
     var subscriptions = Set<AnyCancellable>()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Classes"
+        configureTableView()
+        configureSearchController()
+        fetchClasses()
+    }
+    
+    private func configureTableView() {
         displayTableView.delegate = self
         displayTableView.dataSource = self
-        displayTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        fetchClasses()
-        
-        
-        // Do any additional setup after loading the view.
+        displayTableView.estimatedRowHeight = 100.0
+        displayTableView.rowHeight = UITableView.automaticDimension
+//        displayTableView.register(CoreClassesCell.self, forCellReuseIdentifier: CoreClassesCell.reuseIdentifier)
     }
+    
+    //  displays search results in current view
+    private func configureSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+    }
+    
     
     private func fetchClasses() {
         let networkController = NetworkController()
@@ -76,9 +91,12 @@ extension CoreClassesViewController:  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! UITableViewCell
-        cell.textLabel?.text = filteredClasses[indexPath.row].title  ?? ""
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CoreClassesCell.reuseIdentifier, for: indexPath) as? CoreClassesCell {
+        let coreClass = filteredClasses[indexPath.row]
+        cell.configureWith(coreClass)
         return cell
+        }
+      return UITableViewCell()
     }
     
     
@@ -87,4 +105,15 @@ extension CoreClassesViewController:  UITableViewDataSource {
 
 extension CoreClassesViewController: UITableViewDelegate {
     
+}
+
+extension CoreClassesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchedText  = searchController.searchBar.text {
+            filter = searchedText
+            applyFilter(filter)
+        } else {
+            filter = ""
+        }
+    }
 }

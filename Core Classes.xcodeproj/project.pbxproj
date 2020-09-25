@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B55B8AF2251D1C0B00252AFD /* CoreClassesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B8AF1251D1C0B00252AFD /* CoreClassesCell.swift */; };
 		B584B89D251B1E68005F2275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584B89C251B1E68005F2275 /* AppDelegate.swift */; };
 		B584B89F251B1E68005F2275 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584B89E251B1E68005F2275 /* SceneDelegate.swift */; };
 		B584B8A4251B1E68005F2275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B584B8A2251B1E68005F2275 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B55B8AF1251D1C0B00252AFD /* CoreClassesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClassesCell.swift; sourceTree = "<group>"; };
 		B584B899251B1E68005F2275 /* Core Classes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Classes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B584B89C251B1E68005F2275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B584B89E251B1E68005F2275 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B55B8AF0251D1BD100252AFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B55B8AF1251D1C0B00252AFD /* CoreClassesCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B584B890251B1E68005F2275 = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +74,10 @@
 		B584B89B251B1E68005F2275 /* Core Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B584B89C251B1E68005F2275 /* AppDelegate.swift */,
 				B584B89E251B1E68005F2275 /* SceneDelegate.swift */,
+				B584B89C251B1E68005F2275 /* AppDelegate.swift */,
 				B584B8BD251B2E4E005F2275 /* CoreClassesViewController.swift */,
+				B55B8AF0251D1BD100252AFD /* Views */,
 				B584B8B8251B2993005F2275 /* ModelControllers */,
 				B584B8B3251B2059005F2275 /* Network Layer */,
 				B584B8B0251B1EA7005F2275 /* Model */,
@@ -181,6 +192,7 @@
 				B584B89D251B1E68005F2275 /* AppDelegate.swift in Sources */,
 				B584B89F251B1E68005F2275 /* SceneDelegate.swift in Sources */,
 				B584B8B2251B1ED9005F2275 /* CoreClasses.swift in Sources */,
+				B55B8AF2251D1C0B00252AFD /* CoreClassesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -310,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
