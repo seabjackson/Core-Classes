@@ -14,6 +14,7 @@ class CoreClassesCell: UITableViewCell {
     
     @IBOutlet weak var classTitleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var instructorLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -30,6 +31,7 @@ class CoreClassesCell: UITableViewCell {
     func configureWith(_ coreClass: CoreClasses) {
         classTitleLabel.text = coreClass.title ?? ""
         categoryLabel.text  = coreClass.modality ?? ""
+        instructorLabel.text = coreClass.instructor ?? ""
     }
 
 }
