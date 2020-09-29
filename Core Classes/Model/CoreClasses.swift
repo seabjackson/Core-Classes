@@ -25,11 +25,16 @@ struct CoreClasses : Codable {
     let time : Int?
     let title : String?
     
+    // calculates time in minutes or hours and minutes
     var timeInMinutes: String {
         get {
             let mins = time ?? 0
-            if mins < 60 {
+            if mins < Constants.Times.SIXTYMINUTES {
                 return String(mins) + "m"
+            } else if mins ==  Constants.Times.SIXTYMINUTES  {
+                return String(1) + "h" // one hour
+            } else if mins > Constants.Times.SIXTYMINUTES {
+                return String(mins / Constants.Times.SIXTYMINUTES) + "h" + " " +  String(mins % Constants.Times.SIXTYMINUTES) + "m"
             }
             return ""
         }

@@ -98,4 +98,8 @@ struct Constants {
     struct Titles {
         static let HomeScreenTitle = "Classes"
     }
+    
+    struct Times {
+        static let SIXTYMINUTES = 60
+    }
 }

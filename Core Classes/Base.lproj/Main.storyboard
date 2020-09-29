@@ -27,10 +27,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30m" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkA-pA-eYF">
-                                                    <rect key="frame" x="345" y="11" width="44" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 30m" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkA-pA-eYF">
+                                                    <rect key="frame" x="337" y="11" width="52" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="QfJ-oy-DC5"/>
+                                                        <constraint firstAttribute="width" constant="52" id="QfJ-oy-DC5"/>
                                                         <constraint firstAttribute="height" constant="18" id="aVl-OC-SWe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
