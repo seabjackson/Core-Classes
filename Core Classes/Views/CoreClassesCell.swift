@@ -30,12 +30,12 @@ class CoreClassesCell: UITableViewCell {
     }
     
     func configureWith(_ coreClass: CoreClasses) {
-        classTitleLabel.text = coreClass.title ?? ""
-        categoryLabel.text  = coreClass.modality ?? ""
-        instructorLabel.text = coreClass.instructor ?? ""
-        descriptionLabel.text = coreClass.description ?? ""
-        let modality = ModalityColors(rawValue: coreClass.modality ?? "")
-        setColorFor(modality: modality)
+//        classTitleLabel.text = coreClass.title ?? ""
+//        categoryLabel.text  = coreClass.modality ?? ""
+//        instructorLabel.text = coreClass.instructor ?? ""
+//        descriptionLabel.text = coreClass.description ?? ""
+//        let modality = ModalityColors(rawValue: coreClass.modality ?? "")
+//        setColorFor(modality: modality)
     }
     
     private func setColorFor(modality: ModalityColors?) {
