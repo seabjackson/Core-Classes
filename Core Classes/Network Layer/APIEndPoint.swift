@@ -16,21 +16,20 @@ struct APIEndPoint {
 /// https://core-class-search.herokuapp.com/classes
 extension APIEndPoint {
     var url: URL {
-//        var components = URLComponents()
-//        components.scheme = "https"
-//        components.host = "core-class-search.herokuapp.com"
-//        components.path = path
-//        components.queryItems = queryItems
+        var components = URLComponents()
+        components.scheme = Constants.URL.scheme
+        components.host = Constants.URL.host
+        components.path = path
+        components.queryItems = queryItems
         
-        guard let url = URL(string: "https://core-class-search.herokuapp.com/classes") else {
-            preconditionFailure("The URL has Invalid URL Components: ")
+        guard let url = components.url else {
+            preconditionFailure("The URL has Invalid Components: \(components)")
         }
-        print("the  url is \(url)")
-        return  url
+        return url
     }
     
     static var coreClasses: Self {
-        return APIEndPoint(path: "/classes")
+        return APIEndPoint(path: Constants.URL.path)
     }
 }
 

@@ -102,4 +102,10 @@ struct Constants {
     struct Times {
         static let SIXTYMINUTES = 60
     }
+    
+    struct URL {
+        static let scheme = "https"
+        static let host = "core-class-search.herokuapp.com"
+        static let path = "/classes"
+    }
 }
