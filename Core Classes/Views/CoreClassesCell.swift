@@ -34,7 +34,7 @@ class CoreClassesCell: UITableViewCell {
         timeLabel.text = coreClass.timeInHoursAndMinutes
         categoryLabel.text  = coreClass.modality ?? ""
         setColorFor(modality: coreClass.modalityColor)
-        //        classTitleLabel.text = coreClass.title ?? ""
+        classTitleLabel.text = coreClass.title ?? ""
         
         //        instructorLabel.text = coreClass.instructor ?? ""
         //        descriptionLabel.text = coreClass.description ?? ""
