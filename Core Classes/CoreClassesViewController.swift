@@ -19,13 +19,15 @@ class CoreClassesViewController: UIViewController {
     @IBOutlet weak var displayTableView: UITableView!
     
     var subscriptions = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "Classes"
+        configureNavigationController()
         configureTableView()
         configureSearchController()
         fetchClasses()
+        
+        
     }
     
     private func configureTableView() {
@@ -33,16 +35,28 @@ class CoreClassesViewController: UIViewController {
         displayTableView.dataSource = self
         displayTableView.estimatedRowHeight = 100.0
         displayTableView.rowHeight = UITableView.automaticDimension
-//        displayTableView.register(CoreClassesCell.self, forCellReuseIdentifier: CoreClassesCell.reuseIdentifier)
+        displayTableView.backgroundColor = UIColor(hex: Constants.Theme.mainColor)
+    }
+    
+    private func configureNavigationController() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(hex: Constants.Theme.mainColor)
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = Constants.Titles.HomeScreenTitle
     }
     
     //  displays search results in current view
     private func configureSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
+        searchController.searchBar.autocapitalizationType = .none
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
+        
     }
     
     
@@ -92,11 +106,17 @@ extension CoreClassesViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CoreClassesCell.reuseIdentifier, for: indexPath) as? CoreClassesCell {
-        let coreClass = filteredClasses[indexPath.row]
-        cell.configureWith(coreClass)
-        return cell
+            let coreClass = filteredClasses[indexPath.row]
+            cell.configureWith(coreClass)
+            return cell
         }
-      return UITableViewCell()
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let coreClassCell = cell as? CoreClassesCell {
+            coreClassCell.contentView.backgroundColor = UIColor(hex: Constants.Theme.mainColor , alpha: 1.0)
+        }
     }
     
     
