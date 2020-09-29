@@ -26,9 +26,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uiE-al-QF9" id="rQ4-K8-0ku">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30m" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkA-pA-eYF">
+                                                    <rect key="frame" x="345" y="11" width="44" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="QfJ-oy-DC5"/>
+                                                        <constraint firstAttribute="height" constant="18" id="aVl-OC-SWe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="GkA-pA-eYF" secondAttribute="trailing" constant="25" id="ZYW-7V-fAe"/>
+                                                <constraint firstItem="GkA-pA-eYF" firstAttribute="top" secondItem="rQ4-K8-0ku" secondAttribute="top" constant="11" id="jmB-Ta-Lzn"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="GkA-pA-eYF" id="l7v-y6-Na7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -49,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjf-eF-Cea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="7"/>
+            <point key="canvasLocation" x="873.91304347826099" y="6.6964285714285712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="crL-nR-XeF">

@@ -119,6 +119,10 @@ extension CoreClassesViewController:  UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+    
     
 }
 

@@ -12,6 +12,7 @@ class CoreClassesCell: UITableViewCell {
     
     static let reuseIdentifier = "CoreClassesCell"
     
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var classTitleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var instructorLabel: UILabel!
@@ -30,6 +31,7 @@ class CoreClassesCell: UITableViewCell {
     }
     
     func configureWith(_ coreClass: CoreClasses) {
+        timeLabel.text = coreClass.timeInMinutes
 //        classTitleLabel.text = coreClass.title ?? ""
 //        categoryLabel.text  = coreClass.modality ?? ""
 //        instructorLabel.text = coreClass.instructor ?? ""

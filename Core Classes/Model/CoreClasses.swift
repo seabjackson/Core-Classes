@@ -25,6 +25,17 @@ struct CoreClasses : Codable {
     let time : Int?
     let title : String?
     
+    var timeInMinutes: String {
+        get {
+            let mins = time ?? 0
+            if mins < 60 {
+                return String(mins) + "m"
+            }
+            return ""
+        }
+        
+    }
+    
     enum CodingKeys: String, CodingKey {
         case description = "description"
         case id = "id"
