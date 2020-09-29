@@ -23,7 +23,7 @@ extension APIEndPoint {
         components.queryItems = queryItems
         
         guard let url = components.url else {
-            preconditionFailure("The URL has Invalid Components: \(components)")
+            preconditionFailure(Constants.URL.invalidURL + "\(components)")
         }
         return url
     }

@@ -37,15 +37,24 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weights" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-L0-VuN">
+                                                    <rect key="frame" x="265" y="11" width="56" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="Dos-L0-VuN" firstAttribute="top" secondItem="GkA-pA-eYF" secondAttribute="top" id="DSr-tC-uUi"/>
                                                 <constraint firstAttribute="trailing" secondItem="GkA-pA-eYF" secondAttribute="trailing" constant="25" id="ZYW-7V-fAe"/>
                                                 <constraint firstItem="GkA-pA-eYF" firstAttribute="top" secondItem="rQ4-K8-0ku" secondAttribute="top" constant="11" id="jmB-Ta-Lzn"/>
+                                                <constraint firstItem="GkA-pA-eYF" firstAttribute="leading" secondItem="Dos-L0-VuN" secondAttribute="trailing" constant="16" id="xkc-lk-von"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="categoryLabel" destination="Dos-L0-VuN" id="xG7-ER-ZVQ"/>
                                             <outlet property="timeLabel" destination="GkA-pA-eYF" id="l7v-y6-Na7"/>
                                         </connections>
                                     </tableViewCell>

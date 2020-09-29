@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B55B8AF2251D1C0B00252AFD /* CoreClassesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B8AF1251D1C0B00252AFD /* CoreClassesCell.swift */; };
+		B576B9CB2522EBE800515920 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576B9CA2522EBE800515920 /* Utils.swift */; };
 		B584B89D251B1E68005F2275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584B89C251B1E68005F2275 /* AppDelegate.swift */; };
 		B584B89F251B1E68005F2275 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584B89E251B1E68005F2275 /* SceneDelegate.swift */; };
 		B584B8A4251B1E68005F2275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B584B8A2251B1E68005F2275 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		B55B8AF1251D1C0B00252AFD /* CoreClassesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreClassesCell.swift; sourceTree = "<group>"; };
+		B576B9CA2522EBE800515920 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B584B899251B1E68005F2275 /* Core Classes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Classes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B584B89C251B1E68005F2275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B584B89E251B1E68005F2275 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				B584B89E251B1E68005F2275 /* SceneDelegate.swift */,
 				B584B89C251B1E68005F2275 /* AppDelegate.swift */,
 				B584B8BD251B2E4E005F2275 /* CoreClassesViewController.swift */,
+				B576B9CA2522EBE800515920 /* Utils.swift */,
 				B55B8AF0251D1BD100252AFD /* Views */,
 				B584B8B8251B2993005F2275 /* ModelControllers */,
 				B584B8B3251B2059005F2275 /* Network Layer */,
@@ -187,6 +190,7 @@
 			files = (
 				B584B8B5251B2079005F2275 /* APIEndPoint.swift in Sources */,
 				B584B8B7251B243B005F2275 /* NetworkController.swift in Sources */,
+				B576B9CB2522EBE800515920 /* Utils.swift in Sources */,
 				B584B8BE251B2E4E005F2275 /* CoreClassesViewController.swift in Sources */,
 				B584B8BA251B29B6005F2275 /* CoreClassesController.swift in Sources */,
 				B584B89D251B1E68005F2275 /* AppDelegate.swift in Sources */,

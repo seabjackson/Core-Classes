@@ -31,13 +31,15 @@ class CoreClassesCell: UITableViewCell {
     }
     
     func configureWith(_ coreClass: CoreClasses) {
-        timeLabel.text = coreClass.timeInMinutes
-//        classTitleLabel.text = coreClass.title ?? ""
-//        categoryLabel.text  = coreClass.modality ?? ""
-//        instructorLabel.text = coreClass.instructor ?? ""
-//        descriptionLabel.text = coreClass.description ?? ""
-//        let modality = ModalityColors(rawValue: coreClass.modality ?? "")
-//        setColorFor(modality: modality)
+        timeLabel.text = coreClass.timeInHoursAndMinutes
+        categoryLabel.text  = coreClass.modality ?? ""
+        setColorFor(modality: coreClass.modalityColor)
+        //        classTitleLabel.text = coreClass.title ?? ""
+        
+        //        instructorLabel.text = coreClass.instructor ?? ""
+        //        descriptionLabel.text = coreClass.description ?? ""
+       
+      
     }
     
     private func setColorFor(modality: ModalityColors?) {
@@ -107,5 +109,6 @@ struct Constants {
         static let scheme = "https"
         static let host = "core-class-search.herokuapp.com"
         static let path = "/classes"
+        static let invalidURL = "The URL has Invalid Components: "
     }
 }

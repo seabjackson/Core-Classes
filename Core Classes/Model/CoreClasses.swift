@@ -26,7 +26,7 @@ struct CoreClasses : Codable {
     let title : String?
     
     // calculates time in minutes or hours and minutes
-    var timeInMinutes: String {
+    var timeInHoursAndMinutes: String {
         get {
             let mins = time ?? 0
             if mins < Constants.Times.SIXTYMINUTES {
@@ -38,7 +38,10 @@ struct CoreClasses : Codable {
             }
             return ""
         }
-        
+    }
+    
+    var modalityColor: ModalityColors? {
+        return ModalityColors(rawValue: modality ?? "")
     }
     
     enum CodingKeys: String, CodingKey {
