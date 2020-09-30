@@ -20,11 +20,11 @@
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.99607843137254903" green="0.97647058823529409" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoreClassesCell" rowHeight="96" id="uiE-al-QF9" customClass="CoreClassesCell" customModule="Core_Classes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="96"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoreClassesCell" rowHeight="103" id="uiE-al-QF9" customClass="CoreClassesCell" customModule="Core_Classes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uiE-al-QF9" id="rQ4-K8-0ku">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 30m" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkA-pA-eYF">
@@ -38,23 +38,45 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Weights" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-L0-VuN">
-                                                    <rect key="frame" x="196.5" y="11" width="124.5" height="18"/>
+                                                    <rect key="frame" x="204.5" y="11" width="116.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Exciting Weights Class" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mp-Ku-lrc">
-                                                    <rect key="frame" x="24" y="7" width="172.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="24" y="7" width="180.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Doe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8l-60-pGA">
+                                                    <rect key="frame" x="24" y="27.5" width="365" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put on your dancing shoes!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sb-pM-BcW">
+                                                    <rect key="frame" x="24" y="55" width="365" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="xGn-20-Awo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="t8l-60-pGA" firstAttribute="top" secondItem="6Mp-Ku-lrc" secondAttribute="bottom" id="1K7-eH-L9g"/>
+                                                <constraint firstAttribute="trailing" secondItem="6sb-pM-BcW" secondAttribute="trailing" constant="25" id="2dB-t6-HNC"/>
                                                 <constraint firstItem="Dos-L0-VuN" firstAttribute="top" secondItem="GkA-pA-eYF" secondAttribute="top" id="DSr-tC-uUi"/>
+                                                <constraint firstItem="t8l-60-pGA" firstAttribute="leading" secondItem="rQ4-K8-0ku" secondAttribute="leading" constant="24" id="Gwp-Yz-lB5"/>
+                                                <constraint firstAttribute="trailing" secondItem="t8l-60-pGA" secondAttribute="trailing" constant="25" id="J6c-tF-PDL"/>
                                                 <constraint firstItem="6Mp-Ku-lrc" firstAttribute="leading" secondItem="rQ4-K8-0ku" secondAttribute="leading" constant="24" id="OyR-cD-JvI"/>
+                                                <constraint firstAttribute="bottom" secondItem="6sb-pM-BcW" secondAttribute="bottom" constant="12" id="V9i-6O-ALl"/>
+                                                <constraint firstItem="6sb-pM-BcW" firstAttribute="top" secondItem="t8l-60-pGA" secondAttribute="bottom" constant="9.5" id="ZRH-X0-Xg2"/>
                                                 <constraint firstAttribute="trailing" secondItem="GkA-pA-eYF" secondAttribute="trailing" constant="25" id="ZYW-7V-fAe"/>
+                                                <constraint firstItem="6sb-pM-BcW" firstAttribute="leading" secondItem="rQ4-K8-0ku" secondAttribute="leading" constant="24" id="b5a-1m-JDB"/>
                                                 <constraint firstItem="6Mp-Ku-lrc" firstAttribute="top" secondItem="rQ4-K8-0ku" secondAttribute="top" constant="7" id="c0a-Yk-911"/>
                                                 <constraint firstItem="GkA-pA-eYF" firstAttribute="top" secondItem="rQ4-K8-0ku" secondAttribute="top" constant="11" id="jmB-Ta-Lzn"/>
                                                 <constraint firstItem="Dos-L0-VuN" firstAttribute="leading" secondItem="6Mp-Ku-lrc" secondAttribute="trailing" id="xDb-FR-ivn"/>
@@ -65,6 +87,8 @@
                                         <connections>
                                             <outlet property="categoryLabel" destination="Dos-L0-VuN" id="xG7-ER-ZVQ"/>
                                             <outlet property="classTitleLabel" destination="6Mp-Ku-lrc" id="6Kr-LL-PC3"/>
+                                            <outlet property="descriptionLabel" destination="6sb-pM-BcW" id="p8p-J6-RUP"/>
+                                            <outlet property="instructorLabel" destination="t8l-60-pGA" id="jZx-Wy-5Yb"/>
                                             <outlet property="timeLabel" destination="GkA-pA-eYF" id="l7v-y6-Na7"/>
                                         </connections>
                                     </tableViewCell>
