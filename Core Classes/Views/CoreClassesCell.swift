@@ -37,8 +37,6 @@ class CoreClassesCell: UITableViewCell {
         classTitleLabel.text = coreClass.title ?? ""
         instructorLabel.text = coreClass.instructor ?? ""
         descriptionLabel.text = coreClass.description ?? "No description yet for this activity" // assumption on if no description available
-       
-      
     }
     
     private func setColorFor(modality: ModalityColors?) {

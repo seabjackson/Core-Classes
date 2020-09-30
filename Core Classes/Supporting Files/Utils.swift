@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// UIColor  extension to convert from hex string to UIColor
 extension UIColor {
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
@@ -17,9 +18,7 @@ extension UIColor {
         if hexFormatted.hasPrefix("#") {
             hexFormatted = String(hexFormatted.dropFirst())
         }
-        
         assert(hexFormatted.count == 6, "Invalid hex code used.")
-        
         var rgbValue: UInt64 = 0
         Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
         
@@ -30,6 +29,39 @@ extension UIColor {
     }
     
 }
+
+/// Used for any viewControllers to present an activity indicator when loading data
+public protocol ActivityIndicatorLoading {
+    
+    /// activity indicator
+    var activityIndicator: UIActivityIndicatorView { get }
+    
+    /// show the activity indicator
+    func showActivityIndicator()
+    
+    /// hide activity indicator
+    func hideActivityIndicator()
+}
+
+public extension ActivityIndicatorLoading where Self: UIViewController {
+    func showActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator.style = .large
+            self.activityIndicator.frame = CGRect(x: 0, y: 0, width: Constants.SIZE.activityIndicatorWidth, height: Constants.SIZE.activityIndicatorWidth)
+            self.activityIndicator.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2)
+            self.view.addSubview(self.activityIndicator)
+            self.activityIndicator.startAnimating()
+        }
+    }
+    
+    func hideActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
+        }
+    }
+}
+
 
 enum ModalityColors: String {
     case weights = "Weights"
@@ -61,6 +93,14 @@ struct Constants {
         static let scheme = "https"
         static let host = "core-class-search.herokuapp.com"
         static let path = "/classes"
+        
         static let invalidURL = "The URL has Invalid Components: "
+    }
+    
+    struct SIZE {
+        static let screenHeight = UIScreen.main.bounds.height
+        static let activityIndicatorHeight: CGFloat = 80.0
+        static let activityIndicatorWidth: CGFloat = 80.0
+        static let tableViewRowHeight: CGFloat = 100.0
     }
 }

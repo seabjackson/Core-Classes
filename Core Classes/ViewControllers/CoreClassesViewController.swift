@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-class CoreClassesViewController: UIViewController {
+class CoreClassesViewController: UIViewController, ActivityIndicatorLoading {
     
     @Published var filter =  ""
     
@@ -17,6 +17,9 @@ class CoreClassesViewController: UIViewController {
     var coreClasses = [CoreClasses]()
     
     @IBOutlet weak var displayTableView: UITableView!
+    
+    // add activity indicator required by 'ActivityIndicatorLoading' protocol
+    var activityIndicator = UIActivityIndicatorView()
     
     var subscriptions = Set<AnyCancellable>()
     
@@ -33,7 +36,7 @@ class CoreClassesViewController: UIViewController {
     private func configureTableView() {
         displayTableView.delegate = self
         displayTableView.dataSource = self
-        displayTableView.estimatedRowHeight = 100.0
+        displayTableView.estimatedRowHeight = Constants.SIZE.tableViewRowHeight
         displayTableView.rowHeight = UITableView.automaticDimension
         displayTableView.backgroundColor = UIColor(hex: Constants.Theme.mainColor)
     }
@@ -41,7 +44,7 @@ class CoreClassesViewController: UIViewController {
     private func configureNavigationController() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = UIColor(hex: Constants.Theme.mainColor)
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -59,12 +62,14 @@ class CoreClassesViewController: UIViewController {
         
     }
     
-    
+
     private func fetchClasses() {
         let networkController = NetworkController()
         let coreClassesController  = CoreClassesController(networkController: networkController)
+        self.showActivityIndicator()
         coreClassesController.getClasses()
             .sink(receiveCompletion: { (completion) in
+                self.hideActivityIndicator()
                 switch completion {
                 case let .failure(error):
                     print("Couldn't  get the classes:  \(error)")
@@ -73,8 +78,6 @@ class CoreClassesViewController: UIViewController {
             }) { gottenClasses in
                 
                 self.setClasses(gottenClasses.classes)
-                print(gottenClasses)
-                
         }
         .store(in: &subscriptions)
     }
@@ -87,8 +90,8 @@ class CoreClassesViewController: UIViewController {
     }
     
     func applyFilter(_ filter: String) {
-        if filter.count > 0 {
-            filteredClasses =  coreClasses.filter { $0.title!.lowercased().contains(filter.lowercased()) }
+        if !filter.isEmpty {
+            filteredClasses =  coreClasses.filter { ($0.title?.lowercased().contains(filter.lowercased()) ?? false) }
         } else {
             filteredClasses = coreClasses
         }
@@ -99,6 +102,7 @@ class CoreClassesViewController: UIViewController {
     
 }
 
+// MARK: - UITableView DataSource Methods
 extension CoreClassesViewController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredClasses.count
@@ -120,13 +124,12 @@ extension CoreClassesViewController:  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return Constants.SIZE.tableViewRowHeight
     }
-    
     
 }
 
-
+// MARK:- UITableView Delegate Methods
 extension CoreClassesViewController: UITableViewDelegate {
     
 }
@@ -141,3 +144,4 @@ extension CoreClassesViewController: UISearchResultsUpdating {
         }
     }
 }
+

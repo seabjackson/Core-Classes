@@ -15,7 +15,7 @@ protocol NetworkControllerProtocol: class {
 
 final class NetworkController: NetworkControllerProtocol {
     func get<T: Decodable>(type: T.Type, from url: URL) -> AnyPublisher<T, Error> {
-        var urlRequest = URLRequest(url: url)
+        let urlRequest = URLRequest(url: url)
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map(\.data)
             .decode(type: T.self, decoder: JSONDecoder())
