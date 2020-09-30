@@ -30,9 +30,4 @@ final class CoreClassesController: CoreClassesControllerProtocol {
         return networkController.get(type: Root.self, from: apiEndPoint.url)
     }
     
-    
-    
-    
-    
-    
 }
